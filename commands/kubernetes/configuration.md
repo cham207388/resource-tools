@@ -1,0 +1,35 @@
+# Config
+
+Commands for Configuring and Switching Between Kubernetes Clusters
+
+## Commands for Configuring and Switching Between Kubernetes Clusters
+
+| Command | Explanation | Example Usage |
+|---------|-------------|---------------|
+| `minikube start` | Start Minikube and configure `kubectl` | `minikube start` |
+| `minikube delete` | Delete minikube | `minikube delete` |
+| `minikube start --driver=docker` | Start minikube | `minikube start --driver=docker` |
+| `aws eks --region <region> update-kubeconfig --name <cluster_name>` | Configure kubeconfig for AWS EKS | `aws eks --region us-west-2 update-kubeconfig --name my-eks-cluster` |
+| `doctl kubernetes cluster kubeconfig save <cluster_name>` | Configure kubeconfig for DigitalOcean Kubernetes | `doctl kubernetes cluster kubeconfig save my-doks-cluster` |
+| `kubectl config get-contexts` | List all contexts in your kubeconfig file | `kubectl config get-contexts` |
+| `kubectl config use-context <context_name>` | Switch to a different Kubernetes cluster context | `kubectl config use-context minikube` |
+| `export KUBECONFIG=~/.kube/config_minikube:~/.kube/config_eks:~/.kube/config_doks` | Set the `KUBECONFIG` environment variable to specify multiple configuration files | `export KUBECONFIG=~/.kube/config_minikube:~/.kube/config_eks:~/.kube/config_doks` |
+| `kubectl config view` | Verify the merged configuration | `kubectl config view` |
+| `kubectl config use-context <context_name>` | Switch between contexts in the merged configuration | `kubectl config use-context minikube` |
+
+## K8s Setup for DC
+
+1. download config file
+2. /kplabs-k8s-kubeconfig.yaml
+3. - `export KUBECONFIG=~/.kube/config:~/.kube/do-kubeconfig`
+     `kubectl config view --merge --flatten > ~/.kube/config`
+4. `kubectl config use-context do-nyc1-kplabs-k8s`
+
+## To go back to minikube
+
+`kubectl config use-context minikube`
+
+## Use EKS Cluster
+
+Once cluster is created, execute
+`aws eks --region us-east-1 update-kubeconfig --name <cluster-name>`
