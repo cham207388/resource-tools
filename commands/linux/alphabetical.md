@@ -36,7 +36,7 @@
 
 | Command | Explanation | Usage |
 | ------- | ----------- | ----- |
-| `find` | Searches for files in a directory hierarchy | `find / -name "file.txt"`<br>`find /home -user username`<br>`find /var -type f -name "*.log"`<br>`find / -mtime -1` |
+| `find` | Searches for files in a directory hierarchy | `find / -name "file.txt"`<br>`find /home -user username`<br>`find /var -type f -name "*.log"`<br>`find / -mtime -1` <br> `find ~/develop/ -name "kubernetes.md" -print 2>/dev/null` |
 | `finger` | User information lookup program | `finger`<br>`finger username`<br>`finger -l username`<br>`finger -s` |
 | `free` | Displays the amount of free and used memory in the system | `free`<br>`free -h`<br>`free -m`<br>`free -g` |
 | `grep` | Searches for patterns in files | `grep "pattern" file.txt`<br>`grep -r "pattern" /path`<br>`grep -i "pattern" file.txt`<br>`grep -n "pattern" file.txt` |
