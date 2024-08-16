@@ -42,3 +42,15 @@
       - `kubectl port-forward service/backend-service 8000:8000`
         - port fowarding access on localhost. Something to do with docker darwin.
       - `127.0.0.1:8000`
+
+### Commands to clean put together
+
+- `kubectil config view`
+- `kubectil config use-context new-context`
+- `kubectl edit -n kube-system confimap/aws-auth`
+
+
+### Fargate
+
+- `eksctl create cluster --name eks-fargate --fargate`
+  - creates an eks cluster with fargate profile
