@@ -1,6 +1,8 @@
 # Python Tips
 
 - [Python 101](https://python101.pythonlibrary.org/index.html)
+- [collections](https://docs.python.org/3/library/collections.html)
+  - or just search for python collections
 - [Pypi](https://pypi.org/)
 
 Tip | Explanation |
