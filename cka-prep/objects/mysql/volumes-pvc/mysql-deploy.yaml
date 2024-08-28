@@ -28,7 +28,7 @@ spec:
             - containerPort: 3306
               name: mysql
           volumeMounts:
-            - name: mysql-empty-dir
+            - name: mysql-pvc
               mountPath: /var/lib/mysql
             - name: mysql-initdb
               mountPath: /docker-entrypoint-initdb.d
@@ -40,8 +40,9 @@ spec:
               cpu: 500m
               memory: 1Gi
       volumes:
-        - name: mysql-empty-dir
-          emptyDir: {}
+        - name: mysql-pvc
+          persistentVolumeClaim:
+            claimName: my-pvc
         - name: mysql-initdb
           configMap:
             name: mysql-initdb

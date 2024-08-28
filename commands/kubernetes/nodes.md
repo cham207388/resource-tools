@@ -26,7 +26,8 @@ Nodes are the worker machines in a Kubernetes cluster. They run containerized ap
 - nodeSelector
   - allows you to create a pod in a node that matches certain labels
 - nodeAffinity
-  - newer
+  - newer, more flexibility
+  - determines where a pod can be placed.
 - taint
   - reflects pods
   - effects

@@ -12,5 +12,6 @@ A pod is the smallest and simplest Kubernetes object. It represents a single ins
 |`kubectl describe pod <pod>` |Show detailed information about a specific pod |`kubectl describe pod my-pod` |
 |`kubectl logs <pod>` |Print the logs for a container in a pod |`kubectl logs my-pod` |
 |`kubectl exec -it <pod> -- <command>` |Execute a command in a container in a pod |`kubectl exec -it my-pod -- /bin/bash` |
+|`kubectl exec <pod> -c <container> -it -- <command>` |Execute a command in a container in a pod <br/> **multiple containers** |`kubectl exec my-pod -c my-container -it -- /bin/bash` |
 |`kubectl delete pod <pod>` |Delete a pod |`kubectl delete pod my-pod` |
 |`kubectl run <name> --image=<image>` | Create a new pod with a specified image | `kubectl run my-pod --image=nginx` |
