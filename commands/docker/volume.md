@@ -1,5 +1,8 @@
 # Docker Volume Commands
 
+- volumes directory. Volumes are created in this directory
+  - /var/lib/docker/volumes
+
 | Command | Explanation | Example Usage |
 |---------|-------------|---------------|
 | `docker volume ls` | Lists all volumes available on the Docker host. | `docker volume ls`<br>`docker volume ls -q`<br>`docker volume ls --filter dangling=true` |
