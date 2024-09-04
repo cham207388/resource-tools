@@ -3,8 +3,8 @@
 | Command | Description | Example Usage |
 |---------|-------------|---------------|
 | `eksctl create cluster` | Create an EKS cluster with default settings | `eksctl create cluster --name my-cluster` |
-|  | Create an EKS cluster with custom settings | `eksctl create cluster --name my-cluster --version <version> --node-type <t3.micro> --nodes 2`|
-|  |Create an EKS cluster with custom settings and managed ng |`eksctl create cluster --name my-cluster --version <version> --nodegroup-name <ngname> --node-type <t3.micro> --nodes 2 --managed`|
+|  | Create an EKS cluster with custom settings | `eksctl create cluster --name my-cluster --version <version> --node-type t3.large --nodes 2`|
+|  | Create an EKS cluster with custom settings and managed ng |`eksctl create cluster --name my-cluster --version <version> --nodegroup-name <ngname> --node-type t3.large --nodes 2 --managed`|
 |  | Create an EKS cluster with fargate | `eksctl create cluster --name my-cluster --fargate`|
 | `eksctl delete cluster` | Delete an EKS cluster | `eksctl delete cluster --name my-cluster` |
 | `eksctl get cluster` | List all EKS clusters in the current AWS account and region | `eksctl get cluster` |

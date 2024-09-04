@@ -45,10 +45,9 @@
 
 ### Commands to clean put together
 
-- `kubectil config view`
-- `kubectil config use-context new-context`
+- `kubectl config view`
+- `kubectl config use-context new-context`
 - `kubectl edit -n kube-system confimap/aws-auth`
-
 
 ### Fargate
 

@@ -29,7 +29,7 @@ Commands for Configuring and Switching Between Kubernetes Clusters
 
 `kubectl config use-context minikube`
 
-## Use EKS Cluster
+## To use EKS Cluster
 
 Once cluster is created, execute
 `aws eks --region us-east-1 update-kubeconfig --name <cluster-name>`
