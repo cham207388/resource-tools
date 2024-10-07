@@ -13,3 +13,4 @@
 | `docker container commit` | Creates a new image from a container's changes. | `docker container commit container_name new_image_name`<br>`docker container commit container_id new_image_name`<br>`docker container commit -m "Added new feature" container_name new_image_name` |
 | `docker container cp` | Copies files/folders between a container and the local filesystem. | `docker container cp container_name:/path/to/file /host/path`<br>`docker container cp /host/path container_name:/path/to/file`<br>`docker container cp container_id:/path/to/file /host/path` |
 | `docker container diff` | Inspects changes to files or directories on a container’s filesystem. | `docker container diff container_name`<br>`docker container diff container_id`<br>`docker container diff container_name:tag` |
+| `docker container run` | run a container from an image | `docker container run container_name`<br>`docker container run -it --entrypoint /bin/bash image-name`|

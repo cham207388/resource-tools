@@ -35,12 +35,22 @@ Command | Explanation |
 
 Some dependencies
 
-Depency | Reason |
+Dependency | Reason |
 ---------|----------|
- fastapi | rest api |
- uvicorn | rest api |
- python-dotenv | env variable usage |
- SQLAlchemy | sql |
- pymysql | mysql |
- mysql-connector-python | mysql |
- databricks-sql-connector | datarbicks |
+fastapi | rest api |
+uvicorn | rest api |
+python-dotenv | env variable usage |
+SQLAlchemy | sql |
+pymysql | mysql |
+mysql-connector-python | mysql |
+databricks-sql-connector | datarbicks |
+
+--------------------------------
+
+## uv
+
+- `uv init uv_project`
+- `uv add numpy`
+- `uv add pandas`
+- `uv run main.py`
+- `uv run uvicorn src.main:app --reload`
