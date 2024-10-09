@@ -1,6 +1,9 @@
 # ConfigMaps and Secrets
 
 ConfigMaps and Secrets are objects used to provide configuration information and sensitive data (e.g., passwords) to pods.
+
+## Commands
+
 |Command |Explanation |Example Usage |
 |---------|-------------|---------------|
 |`kubectl get configmaps` |List all ConfigMaps in the current namespace |`kubectl get configmaps` |
@@ -20,8 +23,10 @@ ConfigMaps and Secrets are objects used to provide configuration information and
 
 ## Encode
 
-    `echo -n 'plain-value' | base64`
+`echo -n 'plain-value' | base64`
 
 ## Decode
 
     `echo -n encoded-value | base64 --decode`
+
+## Encrypting Secrets

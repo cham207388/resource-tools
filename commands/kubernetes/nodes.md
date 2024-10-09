@@ -1,6 +1,9 @@
 # Nodes
 
 Nodes are the worker machines in a Kubernetes cluster. They run containerized applications and are managed by the control plane.
+
+## Commands
+
 | Command | Explanation | Example Usage |
 |---------|-------------|---------------|
 | `kubectl get nodes` | List all nodes in the cluster | `kubectl get nodes` |
@@ -11,8 +14,8 @@ Nodes are the worker machines in a Kubernetes cluster. They run containerized ap
 | `kubectl uncordon <node>` | Mark a node as schedulable | `kubectl uncordon node-1` |
 | `kubectl drain <node>` | Safely evict all pods from a node | `kubectl drain node-1 --ignore-daemonsets` |
 | `kubectl delete node <node>` | Delete a node from the cluster | `kubectl delete node node-1` |
-| `kubectl taint nodes <node> <key>=<value>:<effect>` | Add a taint to a node | `kubectl taint nodes node-1 key=value:NoSchedule` |
-| `kubectl taint nodes <node> <key>-` | Remove a taint from a node | `kubectl taint nodes node-1 key-` |
+| `kubectl taint nodes <node> <key>=<value>:<effect>` | Add a taint to a node | `kubectl taint nodes node-1 color=green:NoSchedule` |
+| `kubectl taint nodes <node> <key>-` | Remove a taint from a node | `kubectl taint nodes node-1 color-` |
 | `kubectl label nodes <node> <label>=<value>` | Add or update a label on a node | `kubectl label nodes node-1 env=production` |
 | `kubectl top nodes` | Display resource (CPU/memory) usage of nodes | `kubectl top nodes` |
 | `kubectl get nodes -o wide` | List all nodes with additional details such as internal IP and external IP | `kubectl get nodes -o wide` |
@@ -42,3 +45,50 @@ Nodes are the worker machines in a Kubernetes cluster. They run containerized ap
   - you can schedule a pod on a tainted node with a pass
   - pod.spec.tolerations
   - remove taint `kubectl taint nodes node-name key=value:NoSchedule-`
+
+### Toleration Example
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    env: test
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: IfNotPresent
+  tolerations:
+  - key: "color"
+    operator: "Equal"
+    value: "green"
+    effect: "NoSchedule"
+  nodeSelector: # node affinity preferred
+    size: large # from node label
+```
+
+### Node Affinity Example
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: IfNotPresent
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: size
+            operator: In # NotIn, Exists, DoesNotExist, 
+            values:
+            - large
+
+```

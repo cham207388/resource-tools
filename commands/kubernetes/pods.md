@@ -1,6 +1,9 @@
 # Pods
 
 A pod is the smallest and simplest Kubernetes object. It represents a single instance of a running process in your cluster.
+
+## Commands
+
 | Command | Explanation | Example Usage |
 |---------|-------------|---------------|
 |`kubectl get pods` | List all pods in the current namespace | `kubectl get pods` |
@@ -15,3 +18,10 @@ A pod is the smallest and simplest Kubernetes object. It represents a single ins
 |`kubectl exec <pod> -c <container> -it -- <command>` |Execute a command in a container in a pod <br/> **multiple containers** |`kubectl exec my-pod -c my-container -it -- /bin/bash` |
 |`kubectl delete pod <pod>` |Delete a pod |`kubectl delete pod my-pod` |
 |`kubectl run <name> --image=<image>` | Create a new pod with a specified image | `kubectl run my-pod --image=nginx` |
+
+## Editable Fields
+
+- spec.containers[*].image
+- spec.initContainers[*].image
+- spec.activeDeadlineSeconds
+- spec.tolerations

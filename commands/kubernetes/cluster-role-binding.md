@@ -1,6 +1,9 @@
 # ClusterRoles and ClusterRoleBindings
 
 ClusterRoles and ClusterRoleBindings are similar to Roles and RoleBindings but apply across the entire cluster, not just within a specific namespace.
+
+## Commands
+
 | Command | Explanation | Example Usage |
 |---------|-------------|---------------|
 |`kubectl get clusterroles` |List all cluster roles |`kubectl get clusterroles` |
@@ -15,3 +18,36 @@ ClusterRoles and ClusterRoleBindings are similar to Roles and RoleBindings but a
 |`kubectl describe clusterrolebinding <clusterrolebinding>` |Show detailed information about a specific cluster role binding |`kubectl describe clusterrolebinding my-clusterrolebinding` |
 |`kubectl create clusterrolebinding <name> --clusterrole=<clusterrole> --user=<user>` |Create a new cluster role binding |`kubectl create clusterrolebinding my-clusterrolebinding --clusterrole=my-clusterrole --user=my-user` |
 |`kubectl delete clusterrolebinding <clusterrolebinding>` |Delete a cluster role binding |`kubectl delete clusterrolebinding my-clusterrolebinding` |
+
+### Role Example
+
+    kind: Role
+    apiVersion: rbac.authorization.k8s.io/v1
+    metadata:
+      namespace: default
+      name: pod-reader
+    rules:
+    - apiGroups:
+      - ''
+      resources:
+      - pods
+      verbs:
+      - get
+      - watch
+      - list
+
+### RoleBinding Example
+
+    kind: RoleBinding
+    apiVersion: rbac.authorization.k8s.io/v1
+    metadata:
+      name: read-pods
+      namespace: default
+    subjects:
+    - kind: ServiceAccount
+      name: dashboard-sa # Name is case sensitive
+      namespace: default
+    roleRef:
+      kind: Role #this must be Role or ClusterRole
+      name: pod-reader # this must match the name of the Role or ClusterRole you wish to bind to
+      apiGroup: rbac.authorization.k8s.io
