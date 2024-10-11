@@ -6,9 +6,9 @@ spec:
   type: NodePort
   sessionAffinity: None
   selector:
-    app: nginx
+    app: demo
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
-      nodePort: 30007
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 30001

@@ -13,4 +13,5 @@
   - `kind delete cluster --name kind`
   - [add metrics server](https://maggnus.com/install-metrics-server-on-the-kind-kubernetes-cluster-12b0a5faf94a)
 
-- `kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.6.2/components.yaml`
+  - `kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml`
+  - [helm](https://artifacthub.io/packages/helm/metrics-server/metrics-server)

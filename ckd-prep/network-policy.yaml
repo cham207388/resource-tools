@@ -1,0 +1,37 @@
+# Network Policy that 
+# - allows traffic only from the backend pods in the dev namespace to this db pod
+# - allows traffic only to the port 9090 from the db pod
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: allow-only-backend-traffic
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      role: db
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: backend
+      namespaceSelector:
+        matchLabels:
+          name: dev # required label on the namespace object
+    - ipBlock:
+        cidr: 10.10.1.0/24
+        except:
+        - 10.10.1.1/32
+    ports:
+    - protocol: TCP
+      port: 3306
+  egress:
+  - to:
+    - ipBlock:
+        cidr: 10.10.1.0/24
+    ports:
+    - protocol: TCP
+      port: 9090
