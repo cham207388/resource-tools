@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: developer-binding
+subjects:
+- kind: User
+  name: bais
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: developer # name of the role created in role.yaml
+  apiGroup: rbac.authorization.k8s.io
