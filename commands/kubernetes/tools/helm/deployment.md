@@ -12,3 +12,4 @@ Deploy charts to your Kubernetes cluster to manage applications.
 | `helm uninstall <release-name> --keep-history` | Uninstall a release but keep the history like secrets etc. | `helm uninstall my-nginx --keep-history` |
 | `helm history <release-name>` | Show the history of a release | `helm history my-nginx` |
 | `helm status <release-name>` | Show the status of a release | `helm status my-nginx` |
+| `helm pull --untar <chart>` | Download and unpack a chart | `helm pull --untar bitnami/nginx` |

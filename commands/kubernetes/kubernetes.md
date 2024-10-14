@@ -77,3 +77,18 @@ kubectl get configmap -n kube-system extension-apiserver-authentication -o yaml 
 ```bash
 kubectl get configmap -n kube-system extension-apiserver-authentication -o yaml
 ```
+
+## kubectl convert
+
+- Install convert plugin
+
+1. curl -LO <https://dl.k8s.io/release/$(curl -L -s <https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl-convert>
+2. chmod +x kubectl-convert
+3. sudo mv kubectl-convert /usr/local/bin/
+
+- Convert a deployment to a statefulset
+
+```bash
+- kubectl convert -f <old-file-with-old-version> --output-version <new-api>
+- kubectl convert -f nginx-deploy.yaml --output-version apps/v1
+```

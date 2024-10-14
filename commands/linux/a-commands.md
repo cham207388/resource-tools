@@ -17,3 +17,14 @@
 - [Process Management](./process-management.md)
 - [Vim Shortcuts](./vim-shortcuts.md)
 - [Shortcuts](./shortcuts.md)
+
+### OS
+
+```bash
+cat /etc/*release*
+```
+
+### Insstall helm
+
+- [link](https://helm.sh/docs/intro/install/)
+
