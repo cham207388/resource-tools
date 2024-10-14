@@ -53,3 +53,27 @@
 
 - `eksctl create cluster --name eks-fargate --fargate`
   - creates an eks cluster with fargate profile
+
+- Create a tls secret for webhook
+
+```bash
+kubectl create secret tls ca-key-pair --cert=path/to/cert --key=path/to/key -n <namespace>
+```
+
+- Get the tls secret
+
+```bash
+kubectl get secret <secret-name> -n <namespace>
+```
+
+- Get the cabundle
+
+```bash
+kubectl get configmap -n kube-system extension-apiserver-authentication -o yaml | grep "client-ca-file"
+```
+
+- Get the extension-apiserver-authentication configmap
+
+```bash
+kubectl get configmap -n kube-system extension-apiserver-authentication -o yaml
+```
