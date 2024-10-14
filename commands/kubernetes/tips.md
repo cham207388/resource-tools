@@ -5,6 +5,7 @@ Command | Why |
 `kubectl proxy --port 8080` | See cluster APIs on 127.0.0.1:8080 |
 `kubectl explain pod` | A quick helper on pods |
 `kubectl explain pod.metadata` | A quick helper on pod's metadata |
+`kubectl explain pod --recursive` | A quick helper on pod's structure |
 `kubectl api-resources` | See available API resources |
 `kubectl run pod-name --help` | Shows docs for creating pods |
 `kubectl run pod-name --image=image-name --port=portNo --dry-run=client -o yaml` | Generate pod manifest |
