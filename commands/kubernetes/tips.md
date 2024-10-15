@@ -2,7 +2,9 @@
 
 Command | Why |
 ---------|----------|
+`kubectl proxy` | See cluster APIs on 127.0.0.1:8001 |
 `kubectl proxy --port 8080` | See cluster APIs on 127.0.0.1:8080 |
+`kubectl proxy --port 8080&` | See cluster APIs on 127.0.0.1:8080 and be able to exit terminal without stopping proxy |
 `kubectl explain pod` | A quick helper on pods |
 `kubectl explain pod.metadata` | A quick helper on pod's metadata |
 `kubectl explain pod --recursive` | A quick helper on pod's structure |
