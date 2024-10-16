@@ -1,0 +1,50 @@
+# Create a PersistentVolume: name=log-volume, size=10Gi, accessModes=ReadWriteOnce, hostPath=/var/log
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: log-volume
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+  - ReadWriteMany
+  hostPath:
+    path: /opt/volume/nginx
+
+---
+
+# Create a PersistentVolumeClaim: name=log-volume-claim, accessModes=ReadWriteMany, storageClassName=manual
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: log-claim
+spec:
+  storageClassName: manual
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 200Mi
+
+
+# Create a Pod: name=logger, image=nginx, volumeMounts=log-claim, volume=log-volume
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: logger
+  name: logger
+spec:
+  containers:
+  - image: nginx:alpine
+    name: logger
+    volumeMounts:
+    - name: log
+      mountPath: /var/www/nginx
+  volumes:
+  - name: log
+    persistentVolumeClaim:
+      claimName: log-claim
+
