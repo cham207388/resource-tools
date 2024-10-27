@@ -11,3 +11,8 @@
     [answer](./3-busybox.yaml)
 - Get the YAML for a new namespace called 'myns' without creating it
     `k create ns myns --dry-run=client -o yaml`
+- Create an nginx pod and expose on port 80
+    `kubectl run nginx --image=nginx`
+    `kubectl expose pod nginx --port=80 --target-port=8000`
+- Query another pod in the same namespace
+    `k run busybox --image=busybox --rm -it --restart=Never -- wget -O- pod-ip`

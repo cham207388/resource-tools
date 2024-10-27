@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hpa-manager-config
+  namespace: default
+data:
+  mapUsers: |
+    - userarn: arn:aws:iam::123456789012:user/baicham
+      username: baicham
+      groups:
+        - hpa-role

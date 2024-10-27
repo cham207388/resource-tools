@@ -1,0 +1,29 @@
+# Create a Pod with two containers, both with image busybox and 
+# command "echo hello; sleep 3600". 
+# Connect to the second container and run 'ls'
+
+# k run busybox --image=busybox --restart=Never -oyaml --dry-run=client -- /bin/sh -c 'echo hello;sleep 3600' > pod.yaml
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: busybox
+  name: busybox
+spec:
+  containers:
+  - name: busybox1
+    image: busybox
+    command:
+    - /bin/sh
+    - -c
+    - echo hello;sleep 3600
+    resources: {}
+  - name: busybox2
+    image: busybox
+    command:
+    - /bin/sh
+    - -c
+    - echo hello;sleep 3600
+    resources: {}

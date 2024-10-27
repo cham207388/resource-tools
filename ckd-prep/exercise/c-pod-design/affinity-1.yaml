@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: with-node-affinity
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: accelerator
+            operator: In
+            values:
+            - nvidia-tesla-p100
+  containers:
+  - name: nginx-affinity
+    image: nginx
+    resources: {}
