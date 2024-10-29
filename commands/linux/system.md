@@ -40,6 +40,8 @@ export PATH="/path/to/folder:$PATH"
 - TERM
 - PS1
 - PS2
+- PS3 (select command's prompt)
+  - say write a prompt for select command: What is the day of the week?
 
 ### Bash Shell Variables (Bourne Again Shell=BASH)
 
