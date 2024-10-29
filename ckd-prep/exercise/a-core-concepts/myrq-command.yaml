@@ -1,0 +1,11 @@
+# k create quota myrq --hard=cpu=1,memory=1Gi,pods=2 --dry-run=client -oyaml > myrq-command.yaml
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: myrq
+spec:
+  hard:
+    cpu: "1"
+    memory: 1Gi
+    pods: "2"
+status: {}

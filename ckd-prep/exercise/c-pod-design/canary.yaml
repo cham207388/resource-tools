@@ -1,0 +1,67 @@
+# Implement canary deployment by running two instances of nginx marked as 
+# version=v1 and version=v2 so that the load is balanced at 75%-25% ratio
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: frontend
+    version: v1
+  name: nginx1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend
+      version: v1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: frontend
+        version: v1
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: frontend
+    version: v2
+  name: nginx2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend
+      version: v2
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: frontend
+        version: v2
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: frontend
+  ports:
+  - name: name-of-service-port
+    protocol: TCP
+    port: 80
+    targetPort: http-web-svc

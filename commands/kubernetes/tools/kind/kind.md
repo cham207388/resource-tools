@@ -1,5 +1,23 @@
 # Kind Cluster
 
+## Install
+
+```bash
+brew install kind
+```
+
+## Create Cluster
+
+```bash
+kind create cluster --name kind --config cluster-config-ip.yaml
+```
+
+## Delete Cluster
+
+```bash
+kind delete cluster --name kind
+```
+
 - [Docker image](https://hub.docker.com/r/kindest/node/tags)
 
 - `kubectl port-forward svc/nginx-service 8080:80`
