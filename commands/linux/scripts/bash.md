@@ -75,3 +75,37 @@ Spaces changes the behavior
 - install tldr
   - install node
   - `npm install -g tldr`
+
+## command types
+
+- `type -a command` = shows if the command is an alias, built-in, or a file
+- `type command` = similar to above
+
+### help and man pages
+
+internal commands
+
+#### `help`
+
+Some examples:
+
+- `help cd`
+- `help -d command` = shows the description of the command
+- `help -m command` = shows the manual page of the command
+- `help -s command` = shows the syntax of the command
+
+external commands: `man` or `info`
+
+#### `man`
+
+- `man command`
+- `man -k compress` = shows all commands that match the keyword (finding the command for compressing files)
+- `man -K keyword` = shows all commands that match the keyword
+- `man -f command` = shows the manual page of the command
+- `man -w command` = shows the website of the command
+- `man -l command` = shows the manual page of the command in the specified format
+
+#### `info`
+
+- `info` = shows the info page
+- `info command` = shows the info page of the command

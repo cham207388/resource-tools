@@ -105,3 +105,48 @@ case "$variable" in
     ;;
 esac
 ```
+
+## while loops
+
+starts with `while` and ends with `done`
+
+```bash
+while [[ condition ]]; do
+  echo "condition is true"
+done
+```
+
+## getopts
+
+It's functionality is similar to parameters in a method.
+
+```bash
+while getopts "f:c:" variable; do
+  case $variable in
+    o) echo "option -o";;
+    l) echo "option -l";;
+\?) echo "invalid option";;
+  esac
+done
+```
+
+## read while loop
+
+```bash
+while read -r line; do
+  echo "$line"
+done < "$1"
+```
+
+Look into process substitution: it can be used instead of a file as in "$1"
+
+- `< <(command)` = takes the output of the command and treats it as a file.
+- `< <(ls /etc)` = takes the output of the command and treats it as a file descriptor
+
+## for loops
+
+```bash
+for value in "${array[@]}"; do
+  echo "$value"
+done
+```
