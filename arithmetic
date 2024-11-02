@@ -1,0 +1,9 @@
+#!/bin/bash
+
+x=4
+y=9
+z=9.8
+echo "$x + $y = $((x+y))"
+echo "$x + $z = $((x+y)) | bc"
+echo "scale=2; 10 / 3" | bc
+echo "scale=2; $y / $x" | bc

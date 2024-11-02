@@ -1,0 +1,6 @@
+#!/bin/bash
+
+time=$(date +%H:%m:%S)
+name=Ebrahim
+
+echo "Hello $name, the time right now is $time"

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Author: Alhagie Bai Cham
+# Date Created: 10/25/2024
+# Last Modified: 10/25/2024
+
+# Description
+# Prints some text
+
+# Usage
+# first_script
+
+echo "This is my first script"
+
+exit 0

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# This is a calculator script: 
+# Execute as ./special_calculator 1 + 4 + 6
+# You can change the arguments: numbers and operators as you like
+
+echo $(( $@))
