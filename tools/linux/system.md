@@ -48,3 +48,9 @@ export PATH="/path/to/folder:$PATH"
 95 in total
 
 vim set line number
+
+- clear cache
+
+```bash
+hash -r
+```
