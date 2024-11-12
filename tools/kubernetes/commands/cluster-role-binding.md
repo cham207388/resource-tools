@@ -51,3 +51,13 @@ ClusterRoles and ClusterRoleBindings are similar to Roles and RoleBindings but a
       kind: Role #this must be Role or ClusterRole
       name: pod-reader # this must match the name of the Role or ClusterRole you wish to bind to
       apiGroup: rbac.authorization.k8s.io
+
+----
+
+## List all users bound to ClusterRoles (cluster-wide permissions)
+
+`kubectl get clusterrolebinding -o jsonpath='{range .items[*].subjects[*]}{.kind}{" "}{.name}{"\n"}{end}' | sort | uniq`
+
+## List all users bound to Roles within namespaces (namespace-specific permissions)
+
+`kubectl get rolebinding --all-namespaces -o jsonpath='{range .items[*].subjects[*]}{.kind}{" "}{.name}{"\n"}{end}' | sort | uniq`
