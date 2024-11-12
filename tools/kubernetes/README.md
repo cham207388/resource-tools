@@ -9,20 +9,20 @@
 
 ## Table of Content
 
-- [cluster-role-binding](./cluster-role-binding.md)
-- [cluster](./cluster.md)
-- [nodes](./nodes.md)
-- [configuration](./configuration.md)
-- [pods](./pods.md)
-- [replicasets](./replicasets)
-- [deployment](./deployment.md)
-- [services](./services.md)
-- [daemonsets](./daemonsets.md)
-- [config-secrets](./config-secrets.md)
-- [persistent-volume](./persistent-volume.md)
-- [role-and-binding](./role-and-binding.md)
-- [Horizontal Pod Autoscaler](./horizontal-pod-as.md)
-- [Stateful Set](./statefultset.md)
+- [cluster-role-binding](./commands/cluster-role-binding.md)
+- [cluster](./commands/commands/cluster.md)
+- [nodes](./commands/nodes.md)
+- [configuration](./commands/configuration.md)
+- [pods](./commands/pods.md)
+- [replicasets](./commands/replicasets)
+- [deployment](./commands/deployment.md)
+- [services](./commands/services.md)
+- [daemonsets](./commands/daemonsets.md)
+- [config-secrets](./commands/config-secrets.md)
+- [persistent-volume](./commands/persistent-volume.md)
+- [role-and-binding](./commands/role-and-binding.md)
+- [Horizontal Pod Autoscaler](./commands/horizontal-pod-as.md)
+- [Stateful Set](./commands/statefultset.md)
 - [Ingress]
 - [Network Policy]
 

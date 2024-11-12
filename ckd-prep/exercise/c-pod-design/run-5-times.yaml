@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: run-five
+spec:
+  completions: 5
+  template:
+    spec:
+      containers:
+      - name: busybox
+        image: busybox
+        command: ["/bin/sh", "-c", "for index in 1 2 3 4 5; do echo $index; done"]
+      restartPolicy: OnFailure
