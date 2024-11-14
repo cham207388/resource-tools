@@ -35,3 +35,7 @@
 | `docker image build --compress` | Compresses the build context using gzip. | `docker image build --compress -t my_image .`<br>`docker image build --compress --file Dockerfile-alternate -t my_image .`<br>`docker image build --compress --no-cache -t my_image .` |
 | `docker image build --network` | Sets the networking mode for the RUN instructions during build. | `docker image build --network host -t my_image .`<br>`docker image build --network none -t my_image .`<br>`docker image build --network bridge -t my_image .` |
 | `docker image build --iidfile` | Writes the image ID to the file. | `docker image build --iidfile /tmp/my_image.iid -t my_image .`<br>`docker image build --iidfile /tmp/my_image.iid --file Dockerfile-alternate -t my_image .`<br>`docker image build --iidfile /tmp/my_image.iid --no-cache -t my_image .` |
+
+```bash
+docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/ppc64le,linux/s390x -t your_dockerhub_username/fastapi-multiplatform:latest --push .
+```
