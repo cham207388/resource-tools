@@ -1,0 +1,31 @@
+name: Main Deployment Workflow with Matrix
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/reusable-workflow.yml # Path to the reusable workflow
+    strategy:
+      matrix:
+        environment: [dev, perf, stage, prod]
+        vault_environment: [dev, perf, stage, prod]
+        aws_environment: ["nonprod", "prod"]
+      exclude:
+      - environment: dev
+        aws_environment: prod
+      - environment: perf
+        aws_environment: prod
+      - environment: stage
+        aws_environment: nonprod
+      - environment: prod
+        aws_environment: nonprod
+
+    with:
+      environment: ${{ matrix.environment }}
+      vault_environment: ${{ matrix.vault_environment }}
+      aws_environment: ${{ matrix.aws_environment }}
+    secrets:
+      aws_access_key: ${{ secrets.AWS_ACCESS_KEY }} # Explicitly pass the AWS Access Key
