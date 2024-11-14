@@ -1,0 +1,31 @@
+name: Main Workflow with Simplified Matrix
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # Define only the two configurations you need
+        include:
+        - environment: dev
+          vault_environment: dev
+          aws_environment: nonprod
+        - environment: perf
+          vault_environment: perf
+          aws_environment: prod
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v3
+
+    - name: Run Custom Action for Deployment
+      uses: ./.github/actions/my-custom-action # Path to your custom action
+      with:
+        environment: ${{ matrix.environment }}
+        vault_environment: ${{ matrix.vault_environment }}
+        aws_environment: ${{ matrix.aws_environment }}
