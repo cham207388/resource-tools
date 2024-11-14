@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: python-v02
+  name: python-v02
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: python-v02
+  strategy: {}
+  template:
+    metadata:
+
+      labels:
+        app: python-v02
+    spec:
+      containers:
+      - image: baicham/python-ingress:v0.2
+        name: python-v02
+        resources:
+          requests:
+            cpu: "0.5"
+            memory: "128Mi"
+          limits:
+            cpu: "0.5"
+            memory: "128Mi"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: python-v02
+  name: python-v02
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: python-v02
