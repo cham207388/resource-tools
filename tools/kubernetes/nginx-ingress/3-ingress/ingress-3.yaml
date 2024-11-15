@@ -2,32 +2,31 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nginx-ingress
-  # annotations:
-  # nginx.ingress.kubernetes.io/rewrite-target: /$2
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: "webserver.$hostip.nip.io"
+  - host: "macbook.$hostip.nip.io"
     http:
       paths:
       - path: /
-        # - path: /nginx(/|$)(.*)
         pathType: Prefix
         backend:
           service:
-            name: nginx-web
+            name: python-v01
             port:
-              number: 8080
-      # - path: /v1(/|$)(.*)
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: python-v01
-      #       port:
-      #         number: 8000
-      # - path: /v2(/|$)(.*)
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: python-v02
-      #       port:
-      #         number: 8000
+              number: 8000
+      - path: /v1
+        pathType: Prefix
+        backend:
+          service:
+            name: python-v01
+            port:
+              number: 8000
+      - path: /v2
+        pathType: Prefix
+        backend:
+          service:
+            name: python-v02
+            port:
+              number: 8000
