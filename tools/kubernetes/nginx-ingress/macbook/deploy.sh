@@ -14,7 +14,7 @@ echo -e "\n \n******************************************************************
 echo -e "Finding the IP address of the host to create the nip.io Ingress rule"
 echo -e "*******************************************************************************************************************"
 tput setaf 2
-export hostip=$(hostname  -I | cut -f1 -d' ')
+export hostip=$(ifconfig | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}' | head -n 1)
 echo -e "\nFound the Host IP: $hostip"
 
 tput setaf 3
@@ -27,7 +27,7 @@ envsubst < ingress-resource.yaml | kubectl create -f - --namespace default
 
 tput setaf 7
 echo -e "\n \n*******************************************************************************************************************"
-echo -e "Ingress URL Rule: ingress.$hostip.nip.io \n"
+echo -e "Ingress URL Rule: macbook.$hostip.nip.io \n"
 echo -e "\n You can now browse to the NGINX pod using the nip.io domain from any machine on your local network"
 echo -e "******************************************************************************************************************* \n\n"
 tput setaf 2
