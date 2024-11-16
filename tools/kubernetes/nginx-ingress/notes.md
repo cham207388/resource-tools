@@ -21,6 +21,15 @@
   - or
   - use my domain and create an a record: ingress.alhagiebaicham.com
 
+## What worked
+
+- create a kind cluster using my create-kind script
+  - adds metric server and ingress controller
+- execute macbook/deploy.sh script
+  - has the deployments
+  - has ingress resource
+    - nip.io host
+
 ## Port forwarding
 
 Can't forward to ports below 1024 without permission
