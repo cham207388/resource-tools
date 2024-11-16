@@ -14,7 +14,11 @@ echo -e "\n \n******************************************************************
 echo -e "Finding the IP address of the host to create the nip.io Ingress rule"
 echo -e "*******************************************************************************************************************"
 tput setaf 2
+# for macbook `uname -m`=arm64
 export hostip=$(ifconfig | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}' | head -n 1)
+
+# for linux `uname -m`=x86_64 = aarch64
+# export hostip=$(hostname  -I | cut -f1 -d' ')
 echo -e "\nFound the Host IP: $hostip"
 
 tput setaf 3
