@@ -1,0 +1,16 @@
+resource "null_resource" "force_delete_load_attorney_images" {
+  provisioner "local-exec" {
+    command = <<EOT
+      #!/bin/bash
+
+      # Find all Docker images that start with "load-attorney"
+      image_ids=$(docker images --format "{{.Repository}}:{{.Tag}} {{.ID}}" | awk '$1 ~ /^load-attorney/ {print $2}')
+
+      # Loop through each image ID and force delete it
+      for image_id in $image_ids; do
+        echo "Force deleting Docker image with ID: $image_id"
+        docker rmi -f "$image_id" > /dev/null 2>&1 || echo "Failed to delete image $image_id or image is in use"
+      done
+    EOT
+  }
+}
