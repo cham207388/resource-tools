@@ -14,3 +14,37 @@ resource "null_resource" "force_delete_load_attorney_images" {
     EOT
   }
 }
+
+resource "null_resource" "force_delete_load_attorney_images" {
+  provisioner "local-exec" {
+    command = <<EOT
+      #!/bin/bash
+
+      # Step 1: Find and force remove all containers that are based on images starting with "load-attorney"
+      container_ids=$(docker ps -a --filter "ancestor=load-attorney" --format "{{.ID}}")
+
+      if [ -n "$container_ids" ]; then
+        echo "Stopping and removing containers based on load-attorney images..."
+        for container_id in $container_ids; do
+          echo "Removing container with ID: $container_id"
+          docker stop "$container_id" > /dev/null 2>&1
+          docker rm -f "$container_id" > /dev/null 2>&1 || echo "Failed to remove container $container_id"
+        done
+      fi
+
+      # Step 2: Find all Docker images that start with "load-attorney"
+      image_ids=$(docker images --format "{{.Repository}}:{{.Tag}} {{.ID}}" | awk '$1 ~ /^load-attorney/ {print $2}')
+
+      # Step 3: Loop through each image ID and force delete it
+      if [ -n "$image_ids" ]; then
+        echo "Force deleting Docker images starting with 'load-attorney'..."
+        for image_id in $image_ids; do
+          echo "Force deleting Docker image with ID: $image_id"
+          docker rmi -f "$image_id" > /dev/null 2>&1 || echo "Failed to delete image $image_id or image is in use"
+        done
+      else
+        echo "No load-attorney images found to delete."
+      fi
+    EOT
+  }
+}
