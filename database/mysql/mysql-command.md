@@ -13,3 +13,9 @@
 | `SHOW GRANTS FOR 'user'@'host';`  | Shows the privileges granted to a specified MySQL user.                     | `SHOW GRANTS FOR 'root'@'localhost';`                  |
 | `SHOW PROCESSLIST;`               | Displays a list of active connections and running queries on the MySQL server. | `SHOW PROCESSLIST;`                                  |
 | `SHOW VARIABLES LIKE 'var_name';` | Displays the current value of a specific MySQL system variable.             | `SHOW VARIABLES LIKE 'max_connections';`               |
+
+## Start mysql container
+
+```bash
+docker container run --rm --name postgres_db -e MYSQL_DATABASE=mysql -e MYSQL_USER=mysql -e MYSQL_PASSWORD=password -e MYSQL_ROOT_PASSWORD=password -p 3306:3306 mysql
+```

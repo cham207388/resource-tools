@@ -81,3 +81,9 @@ This table provides a quick reference to the most commonly used Terraform comman
 | `terraform-docs pretty .`          | Generate documentation in pretty format                  | `terraform-docs pretty .`             |
 | `terraform-docs markdown . > README.md`  | Generate Markdown documentation and save to README.md | `terraform-docs markdown . > README.md` |
 | `terraform-docs markdown table . > DOCS.md` | Generate Markdown table documentation and save to DOCS.md | `terraform-docs markdown table . > DOCS.md` |
+
+## Some settings
+
+```bash
+export TF_PLUGIN_TIMEOUT=300
+```

@@ -35,3 +35,9 @@
 | `\o filename` | Send query results to a file or | `\o /path/to/output.txt` |
 
 This table provides an overview of common PostgreSQL commands used in the psql command-line interface for various database operations.
+
+## Start postgres container
+
+```bash
+docker container run --rm --name postgres_db -e POSTGRES_DB=postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=password -p 5432:5432 postgres
+```
