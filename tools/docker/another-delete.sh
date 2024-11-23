@@ -1,26 +1,33 @@
 #!/bin/bash
+
+# The name prefix of images to delete
 IMAGE_PREFIX="load-attorney"
 
 # Step 1: Stop and remove all containers using images with the specified prefix
 echo "Finding and stopping containers running images that start with: $IMAGE_PREFIX"
-container_ids=$(docker ps -a --filter "ancestor=${IMAGE_PREFIX}" --format "{{.ID}}")
+# Loop through all the images that start with the prefix and gather the container IDs that are using them
+for image_id in $(docker images --filter "reference=${IMAGE_PREFIX}*" --format "{{.Repository}}:{{.Tag}}"); do
+  container_ids=$(docker ps -a --filter "ancestor=${image_id}" --format "{{.ID}}")
 
-if [ -n "$container_ids" ]; then
-  echo "Stopping and removing containers..."
-  for container_id in $container_ids; do
-    echo "Stopping container with ID: $container_id"
-    docker stop "$container_id" > /dev/null 2>&1
+  if [ -n "$container_ids" ]; then
+    echo "Stopping and removing containers using image: $image_id"
+    for container_id in $container_ids; do
+      # Step 2: Stop the container
+      echo "Stopping container with ID: $container_id"
+      docker stop "$container_id" > /dev/null 2>&1
 
-    echo "Removing container with ID: $container_id"
-    docker rm -f "$container_id" > /dev/null 2>&1 || echo "Failed to remove container $container_id"
-  done
-else
-  echo "No containers found running images that start with: $IMAGE_PREFIX"
-fi
+      # Step 3: Remove the container
+      echo "Removing container with ID: $container_id"
+      docker rm -f "$container_id" > /dev/null 2>&1 || echo "Failed to remove container $container_id"
+    done
+  else
+    echo "No containers found running image: $image_id"
+  fi
+done
 
 # Step 2: Find and force delete all images starting with the specified prefix
 echo "Finding images with names starting with: $IMAGE_PREFIX"
-image_ids=$(docker images --format "{{.Repository}}:{{.Tag}} {{.ID}}" | awk -v prefix="$IMAGE_PREFIX" '$1 ~ "^"prefix {print $2}')
+image_ids=$(docker images --filter "reference=${IMAGE_PREFIX}*" --format "{{.ID}}")
 
 if [ -n "$image_ids" ]; then
   echo "Force deleting images..."
