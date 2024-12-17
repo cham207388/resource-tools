@@ -8,3 +8,9 @@ SQLalchemy | ```pip install sqlalchemy``` <br> ```pip install psycopg2-binary```
 Pandas | ```pip install pandas``` | [Pandas](https://pandas.pydata.org/docs/) |
 Pytest | ```pip install pytest``` | [Pytest](https://docs.pytest.org/en/7.4.x/) |
 Mysql | ```pip install mysql``` | [Mysql](https://dev.mysql.com/doc/) |
+
+## loguru
+
+```pip install loguru```
+
+[Loguru](https://loguru.readthedocs.io/en/stable/)

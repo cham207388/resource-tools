@@ -9,3 +9,16 @@ Command | Explanation | Example |
 `kubectl run pod-name --image=image-name --namespace=namespace-name` | create pod in namespace | `kubectl run pod-name --image=image-name -n dev` <br/> <hr> `kubectl run pod-name --image=image-name -n namespace-name` |
 `kubectl get pod --all-namespaces` | get all pods in all namespaces | `kubectl get pod --all-namespaces` |
 `kubectl config view --minify \| grep namespace:` | Get current namespace | `kubectl config view --minify \| grep namespace:` <br/> <hr> `kubens` |
+
+- Namespace
+  - dev
+    - web-pod
+    - web-service
+    - web-deploy
+  - prod
+    - db-pod
+    - db-service
+    - db-deploy
+  -- to connect
+    - from within prod namespace `mysql.connect("db-service")`
+    - from outside prod namespace `mysql.connect("db-service.prod.svc.cluster.local")`
