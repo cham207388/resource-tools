@@ -26,7 +26,7 @@
 | `man`             | Display the manual of a command             | `man [command]`                         |
 | `uname`           | Print system information                    | `uname [options]`                       |
 | `top`             | Display tasks and system resource usage     | `top`                                   |
-| `ps`              | Report a snapshot of current processes      | `ps [options]`                          |
+| `ps`              | Report a snapshot of current processes      | `ps [options]`<br> like `ps aux` then <br> `kill -9 process_id`                     |
 | `whoami`          | Display the current username                | `whoami`                                |
 | `uptime`          | Tell how long the system has been running   | `uptime`                                |
 | `date`            | Display or set the system date and time     | `date`                                  |
