@@ -59,3 +59,46 @@ brew install gradle
 | `gradle clean`        | Cleans the project.   | `gradle clean`       |
 | `gradle test`         | Runs the tests.       | `gradle test`        |
 | `gradle run`          | Runs the application. | `gradle run`         |
+
+## ~/.gradle/gradle.properties file
+
+- `org.gradle.logging.level=info` to set the logging level
+- `org.gradle.logging.level=debug` to set the logging level
+- `org.gradle.logging.level=error` to set the logging level
+- `org.gradle.logging.level=warn` to set the logging level
+
+## Gradle objects
+
+- project
+  - methods
+    - repositories
+    - dependencies
+    - application
+  - properties
+    - name
+    - version
+    - description
+    - group
+    - search for gradle properties to see more
+
+- task
+
+### Writing new tasks
+
+```groovy
+task.register('prod') {
+    doFirst {
+        println 'Runs in configuration phase'
+    }
+    doLast {
+        println 'Runs in execution phase'
+    }
+}
+```
+
+### Depends on
+
+```groovy
+prod.dependsOn('dev') // prod task depends on dev task
+prod.finalizedBy('cleanUp') // prod task is finalized by cleanUp task
+```

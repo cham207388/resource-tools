@@ -9,7 +9,7 @@ brew install make
 ## Example Makefile
 
 ```bash
-.PHONY: help
+.PHONY: help alias
 
 help: ## Show this help message with aligned shortcuts, descriptions, and commands
  @awk 'BEGIN {FS = ":"; printf "\033[1m%-20s %-40s %s\033[0m\n", "Target", "Description", "Command"} \
@@ -22,8 +22,8 @@ help: ## Show this help message with aligned shortcuts, descriptions, and comman
   printf "%-20s %-40s %s\n", target, desc, cmd; \
  }' $(MAKEFILE_LIST)
 
-test-cov:
- pytest --cov=.
+alias:
+  command
 ```
 
 ## Usage
