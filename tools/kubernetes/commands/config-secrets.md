@@ -21,6 +21,9 @@ ConfigMaps and Secrets are objects used to provide configuration information and
 |`kubectl create secret generic <name> --from-literal=<key>=<value>` |Create a generic secret from literal values |`kubectl create secret generic my-secret --from-literal=key=value` |
 |`kubectl delete secret <secret>` |Delete a secret |`kubectl delete secret my-secret` |
 
+## ConfigMaps
+
+
 ## Encode
 
 `echo -n 'plain-value' | base64`
