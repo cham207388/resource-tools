@@ -17,7 +17,7 @@ Nodes are the worker machines in a Kubernetes cluster. They run containerized ap
 | `kubectl taint nodes <node> <key>=<value>:<effect>` | Add a taint to a node | `kubectl taint nodes node-1 color=green:NoSchedule` |
 | `kubectl taint nodes <node> <key>-` | Remove a taint from a node | `kubectl taint nodes node-1 color-` |
 | `kubectl label nodes <node> <label>=<value>` | Add or update a label on a node | `kubectl label nodes node-1 env=production` |
-| `kubectl top nodes` | Display resource (CPU/memory) usage of nodes | `kubectl top nodes` |
+| `kubectl top nodes` | Display resource (CPU/memory) usage of nodes <br> **Requires metric server** | `kubectl top nodes` |
 | `kubectl get nodes -o wide` | List all nodes with additional details such as internal IP and external IP | `kubectl get nodes -o wide` |
 | `kubectl annotate nodes <node> <annotation>=<value>` | Add or update an annotation on a node | `kubectl annotate nodes node-1 description='My node'` |
 | `kubectl edit node <node>` | Edit the configuration of a node directly | `kubectl edit node node-1` |
