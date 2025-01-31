@@ -11,7 +11,7 @@ Commands for Configuring and Switching Between Kubernetes Clusters
 | `kubectl config get-clusters` | List all clusters | `kubectl config get-clusters` |
 | `kubectl config view` | Verify the merged configuration | `kubectl config view` <br> `kubectl config --kubeconfig=/root/my-kube-config current-context`|
 | `kubectl config use-context <context_name>` | Switch between contexts in the merged configuration | `kubectl config use-context minikube`|
-| `export KUBECONFIG=/path/kubernetes/config` | Change the current K8s context configuration file | `kubectl config --kubeconfig=/root/my-kube-config use-context research`|
+| `export KUBECONFIG=/path/kubernetes/config` | Change the current K8s context configuration file | `kubectl config --kubeconfig=/root/my-kube-config use-context research` <br> to make it permanent, add it to your .bashrc or .zshrc file|
 | `export KUBECONFIG=~/.kube/config_minikube:~/.kube/config_eks:~/.kube/config_doks` | Set the `KUBECONFIG` environment variable to specify multiple configuration files | `export KUBECONFIG=~/.kube/config_minikube:~/.kube/config_eks:~/.kube/config_doks` |
 | `kubectl api-resources --namespaced=true` | List all namespaced API resources | `kubectl api-resources --namespaced=true` |
 | `kubectl api-resources --namespaced=false` | List all cluster-wide API resources | `kubectl api-resources --namespaced=false` |
