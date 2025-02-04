@@ -3,9 +3,10 @@
 - [Kubernetes docs](https://kubernetes.io/docs/home/)
 - [kubectl](https://kubernetes.io/docs/reference/kubectl/)
 - [Blueprints](https://github.com/aws-ia/terraform-aws-eks-blueprints)
-- `kubectl proxy --port=8080`
-  - see APIs on localhost:8080
+- `kubectl proxy --port=8080` to see APIs on localhost:8080
+- `kubectl proxy` to see APIs on localhost:random port
 - `kubectl verb object` as in `kubectl get pod`
+- `kubectl explain object` as in `kubectl explain pod` to see the fields of the object
 
 ## Table of Content
 

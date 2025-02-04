@@ -14,7 +14,7 @@
     2. `helm create library-backend`
         - creates a local helm chart from configs or you can edit configs
     3. `helm install library-backend library-backend/`
-        - uploads the chart into the k8s
+        - installs the chart into the k8s
       -. `helm install library-backend library-backend/ --dry-run --debug | more`
           - debugging before installation
     4. `helm dependency update library-backend/`
