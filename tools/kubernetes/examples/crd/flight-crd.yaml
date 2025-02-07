@@ -1,0 +1,9 @@
+apiVersion: flightticket/v1
+kind: FlightTicket
+metadata:
+  name: flight-ticket
+spec:
+  from: "New York"
+  to: "Los Angeles"
+  date: "2024-01-01"
+  price: 100
