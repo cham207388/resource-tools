@@ -2,12 +2,6 @@
 
 A deployment provides declarative updates to applications. It manages the rollout of changes and ensures the desired state of an application.
 
-| Command | Explanation | Example Usage |
-|---------|-------------|---------------|
-|`kubectl create deployment <name> --image=<image>` |Create a new deployment |`kubectl create deployment my-deployment --image=nginx` |
-|`kubectl scale deployment <deployment> --replicas=<number>` |Scale a deployment to a specified number of replicas |`kubectl scale deployment my-deployment --replicas=3` |
-|`kubectl delete deployment <deployment>` |Delete a deployment |`kubectl delete deployment my-deployment` |
-
 Below is an extensive list of Kubernetes commands related to deployments, along with explanations and example usage.
 
 | Command | Explanation | Example Usage |
@@ -76,6 +70,6 @@ These commands should cover most of the common tasks you'll encounter when manag
 |Know how to create deployment | `kubectl create deployment deploy-name --image=nginx` replicas=3|
 |Generate a manifest | `kubectl create deploy nginx-deploy --image=nginx --dry-run=client -o yaml`|
 |Know how to set a new image to deployment as part of rolling update | `kubectl set image deployment deploy-name cont-name=new-image-name` replicas=3|
-|Know importance of --record instruction | `kubectl set image deployment nginx nginx=nginx:1.9.1 --record` <br /> With this, <br /> `kubectl rollout history deployment nginx` <br /> will show the command used during the rollout |
+|Know importance of --record instruction | `kubectl set image deployment nginx nginx=nginx:1.9.1 --record` <hr /> With this, <hr /> `kubectl rollout history deployment nginx` <hr /> will show the command used during the rollout |
 |Know how to rollback a deployment | `kubectl rollout undo deployment deploy-name` |
 |Be able to scale the deployment | `kubectl scale deployment deploy-name --replicas=10` |

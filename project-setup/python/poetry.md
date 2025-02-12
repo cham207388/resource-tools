@@ -9,7 +9,7 @@
 | Initialize project    | `poetry init`                       |
 | Add a package         | `poetry add <package>`              |
 | Add a dev package     | `poetry add <package> --group dev`  |
-| Install dependencies  | `poetry install`                    |
+| Install dependencies  | `poetry install` or <hr> `poetry install --no-root`  |
 | Activate shell (venv) | `poetry shell`                      |
 | Run a script          | `poetry run <script>`               |
 | Run tests             | `poetry run pytest` or `pytest`     |
