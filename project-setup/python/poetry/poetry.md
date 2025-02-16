@@ -17,7 +17,7 @@
 | Run a script          | `poetry run <script>`               |
 | Run tests             | `poetry run pytest` or `pytest`     |
 | Run tests with coverage | `pytest --cov=.` |
-| Run tests with coverage <br/> (HTML report) index.html | `pytest --cov=. --cov-report=html` |
+| Run tests with coverage <hr/> (HTML report) index.html | `pytest --cov=. --cov-report=html` |
 
 ## Run tests
 
@@ -25,7 +25,7 @@
 |-----------------------|-------------------------------------|
 | Run tests             | `poetry run pytest` or `pytest`     |
 | Run tests with coverage | `pytest --cov=.` |
-| Run tests with coverage <br/> (HTML report) index.html | `pytest --cov=. --cov-report=html` |
+| Run tests with coverage <hr/> (HTML report) index.html | `pytest --cov=. --cov-report=html` |
 
 ## ignore files from coverage report
 
