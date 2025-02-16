@@ -35,5 +35,3 @@ target "frontend" {
 ```
 
 running `docker buildx bake -f docker-bake.hcl --push` will build and push images to docker hub
-
-
