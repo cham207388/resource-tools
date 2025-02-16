@@ -1,5 +1,8 @@
 # Using Poetry
 
+- [docs](https://python-poetry.org/docs/)
+- [poetry for dep management](../python/docker-fastapi-poetry/pyproject.toml)
+
 ## Create and manage poetry project
 
 | Task                  | Command                             |

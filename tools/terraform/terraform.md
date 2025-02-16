@@ -4,7 +4,7 @@ This table provides a quick reference to the most commonly used Terraform comman
 
 | Command                    | Explanation                                                                 | Example Usage                         |
 |----------------------------|-----------------------------------------------------------------------------|---------------------------------------|
-| `terraform apply`          | Applies the changes required to reach the desired state of the configuration.| `terraform apply`                     |
+| `terraform apply`          | Applies the changes required to reach the desired state of the configuration.| `terraform apply` <hr/> `terraform apply -var="varible=value"`                     |
 | `terraform destroy`        | Destroys the Terraform-managed infrastructure.                              | `terraform destroy`                   |
 | `terraform fmt`            | Formats Terraform configuration files to a canonical format.                | `terraform fmt`                       |
 | `terraform graph`          | Generates a visual representation of the configuration.                     | `terraform graph`                     |

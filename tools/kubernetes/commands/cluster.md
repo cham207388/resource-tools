@@ -1,6 +1,7 @@
 # Cluster
 
 A cluster is a set of nodes (machines) running containerized applications managed by Kubernetes. The cluster provides a resilient, scalable environment for applications.
+
 | Command | Explanation | Example Usage |
 |---------|-------------|---------------|
 | `kubectl cluster-info` | Display cluster information | `kubectl cluster-info` |

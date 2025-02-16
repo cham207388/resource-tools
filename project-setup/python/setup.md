@@ -40,7 +40,7 @@ Dependency | Reason |
 fastapi | rest api |
 uvicorn | rest api |
 python-dotenv | env variable usage |
-SQLAlchemy | sql |
+sqlmodel | sql and orm|
 pymysql | mysql |
 mysql-connector-python | mysql |
 databricks-sql-connector | datarbicks |

@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = "Your description"
+authors = ["authors name"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+uvicorn = {extras = ["standard"], version = "^0.29.0"}
+fastapi = "^0.110.1"
+aiofiles = "^24.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]

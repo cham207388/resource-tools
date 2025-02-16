@@ -5,7 +5,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # Create the database engine
-def query_for_attorneys(self):
+def query_for_books(self):
     engine = create_engine("database_connection_url")
 
     # Define your query
@@ -22,14 +22,14 @@ def query_for_attorneys(self):
         chunks.append(chunk)
 
     # Combine all chunks into a single DataFrame
-    existing_attorneys = pd.concat(chunks)
+    existing_books = pd.concat(chunks)
 
     # Optionally reset the index if needed
-    existing_attorneys.reset_index(drop=True, inplace=True)
+    existing_books.reset_index(drop=True, inplace=True)
     
-    return existing_attorneys
+    return existing_books
 
-# Now you can work with `existing_attorneys` as usual
+# Now you can work with `existing_books` as usual
 
 # ---
 
@@ -64,9 +64,9 @@ with ThreadPoolExecutor() as executor:
         processed_chunks.append(future.result())
 
 # Combine all processed chunks into a single DataFrame
-existing_attorneys = pd.concat(processed_chunks)
+existing_books = pd.concat(processed_chunks)
 
 # Optionally reset the index
-existing_attorneys.reset_index(drop=True, inplace=True)
+existing_books.reset_index(drop=True, inplace=True)
 
 logging.info('All chunks processed, concatenated, and available as a single DataFrame')
