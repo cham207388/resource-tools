@@ -1,5 +1,30 @@
 # Python Project Setup
 
+## Install python
+
+### Using installer
+
+- [download](https://www.python.org/downloads/)
+
+- check available versions `ls /Library/Frameworks/Python.framework/Versions/`
+
+Switch between versions in your ~/.zshrc and `source`
+
+```bash
+alias python3.11='export PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:$PATH" && python3 --version'
+alias python3.12='export PATH="/Library/Frameworks/Python.framework/Versions/3.12/bin:$PATH" && python3 --version'
+```
+
+### brew
+
+- `brew install python@3.11 python@3.12`
+- ls /opt/homebrew/Cellar/python@*
+
+```bash
+alias python3.11='export PATH="/opt/homebrew/opt/python@3.11/bin:$PATH" && python3 --version'
+alias python3.12='export PATH="/opt/homebrew/opt/python@3.12/bin:$PATH" && python3 --version'
+```
+
 ## Poetry
 
 - cd in project-folder

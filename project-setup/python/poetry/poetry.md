@@ -36,3 +36,15 @@
 [run]
 omit = */tests/*
 ```
+
+## Miscellaneous
+
+If imports are showing warnings in vscode,
+
+- poetry env info --path
+- copy the output
+- open project
+- Cmd + Shift + P
+- interpreter
+- enter path
+- path the path to your venv
