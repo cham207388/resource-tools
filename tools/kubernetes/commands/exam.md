@@ -8,3 +8,5 @@
 | expose this deploy to a service | `kubectl expose deploy nginx-deploy --name=nginx-svc --port=8080 --target-port=8080` |
 | create configmap named app-creds <br/> DB_NAME=mysql234 <br/> DB_HOST=mysql.com | `kubectl create configmap app-creds --from-literal=DB_HOST=mysql.com --from-literal=DB_NAME=mysql234` |
 | create secret named db-creds <br/> DB_USERNAME=admin <br/> DB_PASSWORD=pass@123 | `kubectl create secret generic db-creds --from-literal=DB_USERNAME=admin --from-literal=DB_PASSWORD=pass@123` |
+| taint node01 with app=alpha NoSchedule | `kubectl taint node node01 app=alpha:NoSchedule`|
+| create ingress resource called ing-video <br/> host: example.com <br/> path: /video <br/> service: my-video-svc | `kubectl create ingress ing-video --rule="example.com/video*=my-video-svc:8080 --dry-run=server -oyaml > ing-video.yaml`|

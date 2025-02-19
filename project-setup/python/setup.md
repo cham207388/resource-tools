@@ -40,6 +40,8 @@ alias python3.12='export PATH="/opt/homebrew/opt/python@3.12/bin:$PATH" && pytho
 - `deactive` to deactivate
 - `python3 main.py` to start application
 - `uv pip freeze > requirements.txt` to freeze dependencies into requirements.txt
+- check info `echo $VIRTUAL_ENV`
+- use the path result as your interpreter on vs code
 
 ### Option uv
 
@@ -50,6 +52,7 @@ alias python3.12='export PATH="/opt/homebrew/opt/python@3.12/bin:$PATH" && pytho
 
 - python3 -m venv venvname
 - source venvname/bin/activate
+- pip install dependency
 
 ### Run Python Application
 
