@@ -43,13 +43,13 @@ alias python3.12='export PATH="/opt/homebrew/opt/python@3.12/bin:$PATH" && pytho
 
 ### Option uv
 
-    uv venv
-    source .venv/bin/activate
+- uv venv
+- source .venv/bin/activate
 
 ### python venv
 
-    python3 -m venv venvname
-    source venvname/bin/activate
+- python3 -m venv venvname
+- source venvname/bin/activate
 
 ### Run Python Application
 
