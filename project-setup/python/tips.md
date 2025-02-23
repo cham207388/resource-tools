@@ -9,16 +9,15 @@ Tip | Explanation |
 ---------|----------|
  mystring = "name"<br/> dir(mystring) | See all string methods <br/> the same can be applied to any datatype |
 
-## Set specific python version
+## Fixing imports
 
-### Say 3.12
+- use full path imports like from services.models import Book
+- running a script from root
+  - `PYTHONPATH=$(PWD)/src python3 src/services/scripts/init_db.py`
 
-1. install
-2. python3.12 --version
-3. which python3.12
-4. sudo ln -sf response-from-3 from /usr/local/bin/python3
-5. verify: python3 --version
-6. update pip for python 3.12
-      python3.12 -m ensurepip --upgrade
-      python3.12 -m pip install --upgrade pip
-7. pip --version
+## Architecture incompatibity
+
+### pydantic
+
+- `pip install pydantic pydantic_core`
+- `pip install pydantic pydantic_core --no-cache-dir`
