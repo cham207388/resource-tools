@@ -48,3 +48,15 @@ If imports are showing warnings in vscode,
 - interpreter
 - enter path
 - path the path to your venv
+
+## Crate a vm with poetry (if not instantiated)
+
+- check your python
+- poetry env use /usr/local/opt/python@3.12/libexec/bin/python3
+
+| Description | Command |
+|---------|----------|
+| Create a new venv | `poetry env use /usr/local/opt/python@3.12/libexec/bin/python3` (specifying is best practice) <hr/> `poetry env use $(which python3)` |
+| Install dependency | `poetry add dep` |
+| Check venv info | `poetry env info` |
+| Delete venv | `poetry env remove python` |
