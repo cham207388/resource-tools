@@ -1,5 +1,18 @@
 <!-- markdownlint-disable MD033 -->
+
+# Table of Contents
+
+- [Using Poetry](#using-poetry)
+  - [Resources](#resources)
+  - [Create and Manage Poetry Project](#create-and-manage-poetry-project)
+  - [Run Tests](#run-tests)
+  - [Ignore Files from Coverage Report](#ignore-files-from-coverage-report)
+  - [Miscellaneous](#miscellaneous)
+  - [Create a venv with poetry](#create-a-venv-with-poetry)
+
 # Using Poetry
+
+## Resources
 
 - [docs](https://python-poetry.org/docs/)
 - [poetry for dep management](../python/docker-fastapi-poetry/pyproject.toml)
@@ -30,8 +43,8 @@
 
 ## Ignore files from coverage report
 
-- create .coveragerc file in the root of the project
-- add the following to the file:
+- Create `.coveragerc` file in the root of the project
+- Add the following to the file:
 
 ```bash
 [run]
@@ -40,6 +53,7 @@ omit = */tests/*
 
 ## Miscellaneous
 
+```text
 If imports are showing warnings in vscode,
 
 - poetry env info --path
@@ -49,8 +63,9 @@ If imports are showing warnings in vscode,
 - interpreter
 - enter path
 - path the path to your venv
+```
 
-## Crate a vm with poetry (if not instantiated)
+## Create a venv with poetry
 
 | Description | Command |
 |---------|----------|
