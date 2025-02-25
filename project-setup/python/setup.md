@@ -8,22 +8,10 @@
 
 - check available versions `ls /Library/Frameworks/Python.framework/Versions/`
 
-Switch between versions in your ~/.zshrc and `source`
-
-```bash
-alias python3.11='export PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:$PATH" && python3 --version'
-alias python3.12='export PATH="/Library/Frameworks/Python.framework/Versions/3.12/bin:$PATH" && python3 --version'
-```
-
 ### brew
 
 - `brew install python@3.11 python@3.12`
 - ls /opt/homebrew/Cellar/python@*
-
-```bash
-alias python3.11='export PATH="/opt/homebrew/opt/python@3.11/bin:$PATH" && python3 --version'
-alias python3.12='export PATH="/opt/homebrew/opt/python@3.12/bin:$PATH" && python3 --version'
-```
 
 ## Poetry
 
@@ -50,8 +38,9 @@ alias python3.12='export PATH="/opt/homebrew/opt/python@3.12/bin:$PATH" && pytho
 
 ### python venv
 
-- python3 -m venv venvname
-- source venvname/bin/activate
+- python3 -m venv .venv
+- source .venv/bin/activate
+- pip install -r requirements.txt
 - pip install dependency
 
 ### Run Python Application
@@ -59,7 +48,7 @@ alias python3.12='export PATH="/opt/homebrew/opt/python@3.12/bin:$PATH" && pytho
 Command | Explanation |
 ---------|----------|
  `python3 main.py` | basic python application |
- `poetry run uvicorn main:app --reload`<br/> `poetry --directory dir-name run uvicorn main:app --reload` | start fastapi app |
+ `poetry run uvicorn main:app --reload`<hr/> `poetry --directory dir-name run uvicorn main:app --reload` | start fastapi app |
 
 Some dependencies
 
