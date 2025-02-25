@@ -28,7 +28,7 @@
 | Run tests with coverage | `pytest --cov=.` |
 | Run tests with coverage <hr/> (HTML report) index.html | `pytest --cov=. --cov-report=html` |
 
-## ignore files from coverage report
+## Ignore files from coverage report
 
 - create .coveragerc file in the root of the project
 - add the following to the file:
@@ -51,9 +51,6 @@ If imports are showing warnings in vscode,
 - path the path to your venv
 
 ## Crate a vm with poetry (if not instantiated)
-
-- check your python
-- poetry env use /usr/local/opt/python@3.12/libexec/bin/python3
 
 | Description | Command |
 |---------|----------|

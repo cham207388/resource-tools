@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD033 -->
 # Python Project Setup
 
 ## Install python
@@ -11,32 +12,23 @@
 ### brew
 
 - `brew install python@3.11 python@3.12`
-- ls /opt/homebrew/Cellar/python@*
+- `export PYTHONPATH="/opt/homebrew/opt/python@3.12/libexec/"`
+- `export PATH="$(brew --prefix)/opt/python@3.12/libexec/bin:$PATH"`
 
 ## Poetry
 
-- cd in project-folder
-- `poetry init`
-  - initialized a poetry project
-- `poetry install`
-  - updates dependencies
-- `poetry add dependency`
-  - to install a dependency
+- [poetry-info](./poetry/poetry.md)
 
-## Virtual environment
+## Create Virtual env
 
-- `deactive` to deactivate
-- `python3 main.py` to start application
-- `uv pip freeze > requirements.txt` to freeze dependencies into requirements.txt
-- check info `echo $VIRTUAL_ENV`
-- use the path result as your interpreter on vs code
+### UV option
 
-### Option uv
+| Description | Command |
+|---------|----------|
+| create venv | `uv venv` |
+| source | `source .venv/bin/activate` |
 
-- uv venv
-- source .venv/bin/activate
-
-### python3 venv
+### Python3 venv Option
 
 | Description | Command |
 |---------|----------|
@@ -46,6 +38,19 @@
 | install dep | `pip install dep` |
 | get venv info | `echo $VIRTUAL_ENV` |
 | run python script | `python3 filename.py` |
+| deactivate venv | `deactivate` |
+
+## Poetry Option
+
+| Description | Command |
+|---------|----------|
+| check your python | which python3 |
+| Create a new venv using response | `poetry env use response` <hr/> `poetry env use /usr/local/opt/python@3.12/libexec/bin/python3` (specifying is best practice) <hr/> `poetry env use $(which python3)` |
+| Install dependency | `poetry add dep` |
+| Check venv info | `poetry env info` |
+| Use venv info in vscode for intellisence | `poetry env info --path` <hr/> choose interpreter and paste the path |
+| Delete venv | `poetry env remove python` |
+| start fastapi app | `poetry run uvicorn main:app --reload`<hr/> `poetry --directory dir-name run uvicorn main:app --reload` |
 
 ## Some dependencies
 
