@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD033 -->
 # Python Tips
 
 - [Python 101](https://python101.pythonlibrary.org/index.html)
