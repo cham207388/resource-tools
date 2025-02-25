@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD033 -->
 # Using Poetry
 
 - [docs](https://python-poetry.org/docs/)
@@ -12,7 +13,7 @@
 | Initialize project    | `poetry init`                       |
 | Add a package         | `poetry add <package>`              |
 | Add a dev package     | `poetry add <package> --group dev`  |
-| Install dependencies  | `poetry install` or <hr> `poetry install --no-root`  |
+| Install dependencies  | `poetry install` or <hr/> `poetry install --no-root`  |
 | Activate shell (venv) | `poetry shell`                      |
 | Run a script          | `poetry run <script>`               |
 | Run tests             | `poetry run pytest` or `pytest`     |
@@ -60,4 +61,5 @@ If imports are showing warnings in vscode,
 | Create a new venv using response | `poetry env use response` <hr/> `poetry env use /usr/local/opt/python@3.12/libexec/bin/python3` (specifying is best practice) <hr/> `poetry env use $(which python3)` |
 | Install dependency | `poetry add dep` |
 | Check venv info | `poetry env info` |
+| Use venv info in vscode for intellisence | `poetry env info --path` <hr/> choose interpreter and paste the path |
 | Delete venv | `poetry env remove python` |
