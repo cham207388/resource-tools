@@ -36,31 +36,28 @@
 - uv venv
 - source .venv/bin/activate
 
-### python venv
+### python3 venv
 
-- python3 -m venv .venv
-- source .venv/bin/activate
-- pip install -r requirements.txt
-- pip install dependency
+| Description | Command |
+|---------|----------|
+| create venv | `python3 -m venv .venv` |
+| source | `source .venv/bin/activate` |
+| install from requirements | `pip install -r requirements.txt` |
+| install dep | `pip install dep` |
+| get venv info | `echo $VIRTUAL_ENV` |
+| run python script | `python3 filename.py` |
 
-### Run Python Application
+## Some dependencies
 
-Command | Explanation |
----------|----------|
- `python3 main.py` | basic python application |
- `poetry run uvicorn main:app --reload`<hr/> `poetry --directory dir-name run uvicorn main:app --reload` | start fastapi app |
-
-Some dependencies
-
-Dependency | Reason |
----------|----------|
-fastapi | rest api |
-uvicorn | rest api |
-python-dotenv | env variable usage |
-sqlmodel | sql and orm|
-pymysql | mysql |
-mysql-connector-python | mysql |
-databricks-sql-connector | datarbicks |
+| Dependency | Reason |
+|---------|----------|
+| fastapi | rest api |
+| uvicorn | rest api |
+| python-dotenv | env variable usage |
+| sqlmodel | sql and orm|
+| pymysql | mysql |
+| mysql-connector-python | mysql |
+| databricks-sql-connector | datarbicks |
 
 --------------------------------
 

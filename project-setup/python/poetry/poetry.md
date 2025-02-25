@@ -63,3 +63,4 @@ If imports are showing warnings in vscode,
 | Check venv info | `poetry env info` |
 | Use venv info in vscode for intellisence | `poetry env info --path` <hr/> choose interpreter and paste the path |
 | Delete venv | `poetry env remove python` |
+| start fastapi app | `poetry run uvicorn main:app --reload`<hr/> `poetry --directory dir-name run uvicorn main:app --reload` |
