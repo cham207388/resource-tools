@@ -1,5 +1,3 @@
-<!-- markdownlint-disable MD033 -->
-
 # Table of Contents
 
 - [Using Poetry](#using-poetry)
@@ -10,7 +8,7 @@
   - [Miscellaneous](#miscellaneous)
   - [Create a venv with poetry](#create-a-venv-with-poetry)
 
-# Using Poetry
+## Using Poetry
 
 ## Resources
 

@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD033 -->
 # Config
 
 Commands for Configuring and Switching Between Kubernetes Clusters

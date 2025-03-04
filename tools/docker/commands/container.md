@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD033 -->
 # Docker Container Commands
 
 | Command | Explanation | Example Usage |

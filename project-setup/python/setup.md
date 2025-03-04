@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD033 -->
 # Python Project Setup
 
 ## Install python
@@ -34,6 +33,7 @@
 |---------|----------|
 | create venv | `python3 -m venv .venv` |
 | source | `source .venv/bin/activate` |
+| update pip | `pip install --upgrade pip` |
 | install from requirements | `pip install -r requirements.txt` |
 | install dep | `pip install dep` |
 | get venv info | `echo $VIRTUAL_ENV` |

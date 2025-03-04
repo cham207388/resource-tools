@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD033 -->
 # Refresh
 
 | Task | Command |
