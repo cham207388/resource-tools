@@ -15,6 +15,7 @@
 | `\df` | List all functions. | `\df` |
 | `\dv` | List all views. | `\dv` |
 | `\dx` | List all installed extensions. | `\dx` |
+| `\!` | exit database session <hr/> clear the terminal | `\!` <hr/> `\! clear` |
 | `CREATE DATABASE dbname;` | Create a new database. | `CREATE DATABASE testdb;` |
 | `DROP DATABASE dbname;` | Delete a database. | `DROP DATABASE testdb;` |
 | `CREATE TABLE tablename (columnname datatype);` | Create a new table. | `CREATE TABLE employees (id SERIAL PRIMARY KEY, name VARCHAR(100));` |
