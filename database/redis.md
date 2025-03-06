@@ -19,3 +19,17 @@
 | **15. View Redis Logs** | `docker logs redis-server` | Shows the logs of the running Redis container. |
 | **16. Run Redis with Password** | `docker run -d --name redis-secure -p 6379:6379 -e REDIS_PASSWORD=mysecret redis` | Starts Redis with authentication. |
 | **17. Authenticate in Redis CLI** | `AUTH mysecret` | Logs in to Redis when a password is required. |
+
+## Debug
+
+| **Check Type**                 | **Command**            | **Explanation & Example** |
+|--------------------------------|-----------------------|---------------------------|
+| **Check all keys**             | `KEYS *`              | Lists all keys stored in Redis. **Example Output:** `mykey1 mykey2 session:user:123` |
+| **Check if a specific key exists** | `EXISTS mykey` | Returns `1` if `mykey` exists, `0` otherwise. **Example:** `EXISTS mykey` → `1` (key exists) |
+| **Get the value of a key** | `GET mykey` | Retrieves the value stored in `mykey`. **Example:** `GET mykey` → `"Hello Redis"` |
+| **Check data type of a key** | `TYPE mykey` | Returns the type of value stored (string, list, set, etc.). **Example:** `TYPE mylist` → `list` |
+| **Check list contents** | `LRANGE mylist 0 -1` | Shows all items in a list. **Example:** `LRANGE mylist 0 -1` → `["item1", "item2"]` |
+| **Check set contents** | `SMEMBERS myset` | Lists all elements in a set. **Example:** `SMEMBERS myset` → `{ "a", "b", "c" }` |
+| **Check hash fields and values** | `HGETALL myhash` | Retrieves all field-value pairs in a hash. **Example:** `HGETALL user:1001` → `name: "John", age: "30"` |
+| **Check sorted set members** | `ZRANGE myzset 0 -1 WITHSCORES` | Lists all elements in a sorted set with their scores. **Example:** `ZRANGE leaderboard 0 -1 WITHSCORES` → `"Alice 100", "Bob 80"` |
+| **Check the number of keys in Redis** | `DBSIZE` | Returns the total number of keys stored in the database. **Example:** `DBSIZE` → `5` |
