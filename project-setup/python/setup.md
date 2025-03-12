@@ -44,12 +44,12 @@
 
 | Description | Command |
 |---------|----------|
-| check your python | which python3 |
-| Create a new venv using response | `poetry env use response` <hr/> `poetry env use /usr/local/opt/python@3.12/libexec/bin/python3` (specifying is best practice) <hr/> `poetry env use $(which python3)` |
+| check your python | which python3 <hr> $HOME/.pyenv/shims/python|
+| Create a new venv using response | `poetry env use $HOME/.pyenv/shims/python`  <hr/> or `poetry env use $(which python)` (specifying is best practice) |
 | Install dependency | `poetry add dep` |
 | Check venv info | `poetry env info` |
 | Use venv info in vscode for intellisence | `poetry env info --path` <hr/> choose interpreter and paste the path |
-| Delete venv | `poetry env remove python` |
+| Delete venv | `poetry env remove $(poetry env info --path)` <hr/> or `poetry env remove python`  |
 | start fastapi app | `poetry run uvicorn main:app --reload`<hr/> `poetry --directory dir-name run uvicorn main:app --reload` |
 
 ## Some dependencies
