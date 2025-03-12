@@ -10,6 +10,7 @@
   - [7️⃣ Use Pyenv in VS Code](#7️⃣-use-pyenv-in-vs-code)
   - [✅ Final Check](#-final-check)
 - [🚀 Now You're a Pyenv Pro!](#-now-youre-a-pyenv-pro)
+  - [Miscellaneous](#miscellaneous)
 
 
 ## 1️⃣ Install Pyenv
@@ -97,3 +98,26 @@
 ---
 
 # 🚀 Now You're a Pyenv Pro!
+
+## Miscellaneous
+
+If installation/setup fails for open ssl reason
+
+```bash
+brew update
+brew upgrade
+brew install openssl readline sqlite3 xz zlib tcl-tk ncurses
+brew link --force openssl
+```
+
+```bash
+brew --prefix openssl
+```
+
+add to zsh or bash
+```bash
+echo 'export LDFLAGS="-L/usr/local/opt/openssl@3/lib"' >> ~/.zshrc
+echo 'export CPPFLAGS="-I/usr/local/opt/openssl@3/include"' >> ~/.zshrc
+echo 'export PKG_CONFIG_PATH="/usr/local/opt/openssl@3/lib/pkgconfig"' >> ~/.zshrc
+source ~/.zshrc
+```
