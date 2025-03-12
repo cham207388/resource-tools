@@ -19,5 +19,5 @@ Tip | Explanation |
 
 ### pydantic
 
-- `pip install pydantic pydantic_core`
-- `pip install pydantic pydantic_core --no-cache-dir`
+- `pipx install pydantic pydantic_core`
+- `pipx install pydantic pydantic_core --no-cache-dir`
