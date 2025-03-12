@@ -2,17 +2,9 @@
 
 ## Install python
 
-### Using installer
+Follow the ultimate guide
 
-- [download](https://www.python.org/downloads/)
-
-- check available versions `ls /Library/Frameworks/Python.framework/Versions/`
-
-### brew
-
-- `brew install python@3.11 python@3.12`
-- `export PYTHONPATH="/opt/homebrew/opt/python@3.12/libexec/"`
-- `export PATH="$(brew --prefix)/opt/python@3.12/libexec/bin:$PATH"`
+- [ultimate-python-guide](./ultimate-guide.md)
 
 ## Poetry
 
