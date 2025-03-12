@@ -1,12 +1,12 @@
 # Table of Contents
 
-- [Using Poetry](#using-poetry)
+- [Table of Contents](#table-of-contents)
+  - [Using Poetry](#using-poetry)
   - [Resources](#resources)
-  - [Create and Manage Poetry Project](#create-and-manage-poetry-project)
-  - [Run Tests](#run-tests)
-  - [Ignore Files from Coverage Report](#ignore-files-from-coverage-report)
+  - [Create and manage poetry project](#create-and-manage-poetry-project)
+  - [Run tests](#run-tests)
+  - [Ignore files from coverage report](#ignore-files-from-coverage-report)
   - [Miscellaneous](#miscellaneous)
-  - [Create a venv with poetry](#create-a-venv-with-poetry)
 
 ## Using Poetry
 
@@ -30,6 +30,12 @@
 | Run tests             | `poetry run pytest` or `pytest`     |
 | Run tests with coverage | `pytest --cov=.` |
 | Run tests with coverage <hr/> (HTML report) index.html | `pytest --cov=. --cov-report=html` |
+| check your python | which python3 <hr> $HOME/.pyenv/shims/python|
+| Create a new venv using response | `poetry env use $HOME/.pyenv/shims/python`  <hr/> or `poetry env use $(which python)` (specifying is best practice) |
+| Check venv info | `poetry env info` |
+| Use venv info in vscode for intellisence | `poetry env info --path` <hr/> choose interpreter and paste the path |
+| Delete venv | `poetry env remove $(poetry env info --path)` <hr/> or `poetry env remove python`  |
+| start fastapi app | `poetry run uvicorn main:app --reload`<hr/> `poetry --directory dir-name run uvicorn main:app --reload` |
 
 ## Run tests
 
@@ -62,15 +68,3 @@ If imports are showing warnings in vscode,
 - enter path
 - path the path to your venv
 ```
-
-## Create a venv with poetry
-
-| Description | Command |
-|---------|----------|
-| check your python | which python3 |
-| Create a new venv using response | `poetry env use response` <hr/> `poetry env use /usr/local/opt/python@3.12/libexec/bin/python3` (specifying is best practice) <hr/> `poetry env use $(which python3)` |
-| Install dependency | `poetry add dep` |
-| Check venv info | `poetry env info` |
-| Use venv info in vscode for intellisence | `poetry env info --path` <hr/> choose interpreter and paste the path |
-| Delete venv | `poetry env remove python` |
-| start fastapi app | `poetry run uvicorn main:app --reload`<hr/> `poetry --directory dir-name run uvicorn main:app --reload` |
