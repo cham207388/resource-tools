@@ -51,11 +51,11 @@
 |------|---------|
 | **Install Pyenv Virtualenv plugin** | `brew install pyenv-virtualenv` |
 | **Enable Pyenv Virtualenv in shell** | `echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc` |
-| **Create a virtual environment (e.g., `myenv`)** | `pyenv virtualenv 3.11.6 myenv` |
+| **Create a virtual environment (e.g., `myenv`)** | `pyenv virtualenv 3.12.9 .venv` <hr> or `pyenv virtualenv $(pyenv global) .venv` <hr> or `pyenv virtualenv .venv`|
 | **List virtual environments** | `pyenv virtualenvs` |
-| **Activate a virtual environment** | `pyenv activate myenv` |
+| **Activate a virtual environment** | `pyenv activate .venv` |
 | **Deactivate the current virtual environment** | `pyenv deactivate` |
-| **Assign a virtual environment to a project** | `pyenv local myenv` |
+| **Assign a virtual environment to a project** | `pyenv local .venv` |
 
 ---
 
